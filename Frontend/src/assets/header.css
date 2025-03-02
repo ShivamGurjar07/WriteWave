@@ -1,0 +1,245 @@
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #181818;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    margin-bottom: 20px;
+    margin-top: -40px;
+  }
+  
+  .login-signup-page{
+    background-color: pink;
+    padding: 30px;
+    height: 100vh;
+    background-image: url("https://img.freepik.com/free-vector/abstract-technology-betwork-wire-mesh-background_1017-17263.jpg?t=st=1740830454~exp=1740834054~hmac=6eba6c49d8c84ffa0a260c36c99303490b91a9ad2af4092054f0de162d5cd80b&w=1380");
+  }
+
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .logo:hover {
+    color: #00c2ff;
+  }
+  .nav{
+    display: flex;
+    gap: 10px;
+    color: white;
+  }
+
+.theme-toggle-btn{
+    background-color: white;
+    padding: 2px 7px;
+    border-radius: 3px;
+    color: black;
+}
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .welcome {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ddd;
+  }
+  
+  .create-btn {
+    background: #00c2ff;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .create-btn:hover {
+    background: #009ace;
+  }
+  
+  .logout-btn {
+    background: transparent;
+    color: #f05353;
+    border: 1px solid #f05353;
+    padding: 7px 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .logout-btn:hover {
+    background: #f05353;
+    color: white;
+  }
+  
+  .auth-link, .trending-link {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ddd;
+    transition: color 0.3s ease-in-out;
+  }
+  .trending-link{
+    font-size: larger;
+    font-weight: 700;
+  }
+  .auth-link:hover,.trending-link:hover {
+    color: #00c2ff;
+  }
+  
+  .theme-toggle-btn {
+    /* background: none; */
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: 10px;
+    /* color: var(--text-color); */
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .theme-toggle-btn:hover {
+    opacity: 0.8;
+  }
+
+  @media screen and (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      text-align: center;
+    }
+    .nav-links {
+      flex-direction: column;
+      gap: 10px;
+    }
+}  
+
+/* 
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: var(--navbar-bg); 
+    color: var(--text-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    margin-bottom: 20px;
+    margin-top: -40px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .logo:hover {
+    color: #00c2ff;
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .welcome {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--secondary-text-color);
+  }
+  
+  .create-btn {
+    background: #00c2ff;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .create-btn:hover {
+    background: #009ace;
+  }
+  
+  .logout-btn {
+    background: transparent;
+    color: #f05353;
+    border: 1px solid #f05353;
+    padding: 7px 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .logout-btn:hover {
+    background: #f05353;
+    color: white;
+  }
+  
+  .auth-link, .trending-link {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--secondary-text-color);
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .trending-link {
+    font-size: larger;
+    font-weight: 700;
+  }
+  
+  .auth-link:hover, .trending-link:hover {
+    color: #00c2ff;
+  }
+  
+  .theme-toggle-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: 10px;
+    color: var(--text-color);
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .theme-toggle-btn:hover {
+    opacity: 0.8;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      text-align: center;
+    }
+    .nav-links {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+   */

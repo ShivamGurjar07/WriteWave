@@ -1,0 +1,94 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333;
+    --secondary-text-color: #666;
+    --section-bg-color: #f8f8f8; 
+    --category-bg: #ff6600;
+    --category-text-color: white;
+    --navbar-bg: #181818;
+  }
+  
+  .dark-theme {
+    --bg-color: #1e1e1e;
+    --text-color: #f0f0f0;
+    --secondary-text-color: #cccccc;
+    --section-bg-color: #2a2a2a; 
+    --category-bg: #ff8c00;
+    --category-text-color: black;
+    --navbar-bg: #292929; 
+
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  .why-blogging {
+    margin-top: 50px;
+    padding: 40px;
+    background-color: var(--section-bg-color);
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .why-blogging h2 {
+    font-size: 2rem;
+    color: var(--text-color); 
+  }
+  
+  .why-blogging p {
+    font-size: 1.2rem;
+    color: var(--secondary-text-color);
+  }
+  
+  .why-blogging ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .why-blogging li {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    color: var(--text-color); 
+  }
+  
+  .categories {
+    margin-top: 50px;
+  }
+  
+  .categories h2 {
+    font-size: 2rem;
+    color: var(--text-color);
+  }
+  
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .category {
+    background: var(--category-bg);
+    color: var(--category-text-color);
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    width: 200px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+  
+  .category-grid a {
+    text-decoration: none;
+  }
+  
