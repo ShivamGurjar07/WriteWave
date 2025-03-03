@@ -37,7 +37,7 @@ const authenticateUser = (req, res, next) => {
 //  }));
 
 app.use(cors({
-  origin: ["http://localhost:5173", "https://writewave-5o94.onrender.com"],
+  origin: ["https://write-wave-gamma.vercel.app", "https://writewave-5o94.onrender.com"],
   credentials: true,
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
