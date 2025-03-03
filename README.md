@@ -98,7 +98,9 @@ GET	/comments/:postId	Get comments for a post
 Backend:
 
 The backend is deployed on Render/Vercel at:
-```https://writewave-5o94.onrender.com```
+``` bash
+ https://writewave-5o94.onrender.com
+```
 
 
 Frontend:
