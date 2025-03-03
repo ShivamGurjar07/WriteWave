@@ -18,7 +18,7 @@ require("dotenv").config();
 const PORT = process.env.PORT;
 const secret = process.env.JWT_SECRET || shivam;
 
-app.use(cors({origin: "https://write-wave-gamma.vercel.app/", credentials: true, }));
+app.use(cors({origin: "https://write-wave-gamma.vercel.app", credentials: true, }));
 
 app.use(express.json());
 app.use(cookieParser());
