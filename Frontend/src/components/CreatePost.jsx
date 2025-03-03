@@ -36,11 +36,9 @@ export default function CreatePost() {
   if (redirect) {
     return <Navigate to={"/"} />;
   }
-
   if (!userInfo?.id) {
     return <Navigate to="/login" />;
   }
-
   return (
     <div className="create-page">
       <form onSubmit={createNewPost}>
