@@ -33,17 +33,50 @@ WriteWave is a full-stack blog application where users can register, log in, cre
 - Cookie-based authentication
 
 ---
+### ScreenShots
+![image](https://github.com/user-attachments/assets/c28cea37-95b5-4465-8f06-b6542f3f3e13)
+![image](https://github.com/user-attachments/assets/dbfe15de-d725-4434-8939-b4db3201706b)
+![image](https://github.com/user-attachments/assets/a78453ee-3251-41a7-9c15-92c20e413735)
+
+
+
 
 ## 📂 Project Structure
 
 ### Frontend (`/frontend`)
-
-/src   │── /components   │ ├── Header.jsx   │ ├── Layout.jsx   │ ├── Post.jsx   │ ├── Editor.jsx   │ ├── CreatePost.jsx   │ ├── EditPost.jsx   │ ├── PostPage.jsx   │ ├── Register.jsx   │ ├── LoginPage.jsx   │ ├── UserContext.jsx   │── App.jsx   │── main.jsx   │── index.css   │── package.json
+```
+/src
+│── /components
+│     ├── Header.jsx
+│     ├── Layout.jsx
+│     ├── Post.jsx
+│     ├── Editor.jsx
+│     ├── CreatePost.jsx
+│     ├── EditPost.jsx
+│     ├── PostPage.jsx
+│     ├── Register.jsx
+│     ├── LoginPage.jsx
+│     ├── UserContext.jsx
+│── App.jsx
+│── main.jsx
+│── index.css
+│── package.json
+```
 
 ### Backend (`/backend`)
-
-/backend   │── /models   │ ├── user.js   │ ├── post.js   │ ├── comment.js   │── /routes   │ ├── commentRoutes.js   │── /uploads (Stores uploaded images)   │── index.js   │── .env   │── package.json  
-
+```
+/backend
+   │── /models
+   │     ├── user.js
+   │     ├── post.js
+   │     ├── comment.js
+   │── /routes
+   │     ├── commentRoutes.js
+   │── /uploads (Stores uploaded images)
+   │── index.js
+   │── .env
+   │── package.json  
+```
 
 ## 🎯 Installation and Setup
 
@@ -98,14 +131,12 @@ GET	/comments/:postId	Get comments for a post
 Backend:
 
 The backend is deployed on Render/Vercel at:
-```bash
 https://writewave-5o94.onrender.com
 
 
 Frontend:
 
 The frontend is hosted on Vercel at:
-```bash
 https://write-wave-gamma.vercel.app
 
 
