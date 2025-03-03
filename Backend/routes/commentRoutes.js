@@ -4,6 +4,8 @@ const Post = require("../models/post");
 const jwt = require("jsonwebtoken");
 
 const router = express.Router();
+
+// Middleware to authenticate user
 const authenticateUser = (req, res, next) => {
   const token = req.cookies?.token;
   if (!token) {

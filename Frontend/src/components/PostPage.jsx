@@ -9,7 +9,7 @@ export default function PostPage() {
   const { userInfo } = useContext(UserContext);
   const { id } = useParams();
   useEffect(() => {
-    fetch(`https://writewave-5o94.onrender.com/post/${id}`).then((res) => {
+    fetch(`http://localhost:8080/post/${id}`).then((res) => {
       res.json().then((postInfo) => {
         setPostInfo(postInfo);
       });
@@ -48,7 +48,7 @@ export default function PostPage() {
         </div>
 
         <div className="image">
-          <img src={`https://writewave-5o94.onrender.com/${postInfo.cover}`} alt="" />
+          <img src={`http://localhost:8080/${postInfo.cover}`} alt="" />
         </div>
 
         <div

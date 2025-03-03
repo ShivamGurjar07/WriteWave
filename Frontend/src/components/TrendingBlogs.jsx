@@ -49,7 +49,7 @@ export default function TrendingBlogs() {
     <div className="trending-list">
       {trendingPosts.map((post) => (
         <Link to={`/post/${post._id}`} key={post._id} className="trending-card">
-          <img src={`https://writewave-5o94.onrender.com/${post.cover}`} alt={post.title} />
+          <img src={`http://localhost:8080/${post.cover}`} alt={post.title} />
           <div className="trending-info">
             <h3>{post.title}</h3>
             <p className="trending-meta">

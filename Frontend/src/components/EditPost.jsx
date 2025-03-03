@@ -11,7 +11,7 @@ export default function EditPost() {
   const [redirect, setRedirect] = useState(false);
 
   useEffect(() => {
-    fetch(`https://writewave-5o94.onrender.com/post/${id}`)
+    fetch(`http://localhost:8080/post/${id}`)
       .then((res) => res.json())
       .then((postInfo) => {
         if (postInfo) {
@@ -35,10 +35,10 @@ export default function EditPost() {
       data.append("file", files[0]);
     }
 
-    const res = await fetch("https://writewave-5o94.onrender.com/post", {
+    const res = await fetch("http://localhost:8080/post", {
       method: "PUT",
       body: data,
-      // credentials: "include",
+      credentials: "include",
     });
 
     if (res.ok) {

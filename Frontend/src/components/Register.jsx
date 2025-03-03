@@ -13,7 +13,7 @@ export default function Register() {
       return;
     }
     try {
-      const res = await fetch("https://writewave-5o94.onrender.com/register", {
+      const res = await fetch("http://localhost:8080/register", {
         method: "POST",
         body: JSON.stringify({ username, password }),
         headers: { "Content-Type": "application/json" },

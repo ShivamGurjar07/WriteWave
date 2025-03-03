@@ -85,9 +85,6 @@ div.post p.info {
   font-weight: bold;
   color: #333;
 }
-.emoji-auth .author{
-    margin-left: 7px;
-}
 .texts {
   flex-grow: 1;
   display: flex;

@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
 import Editor from "./Editor";
-import { useContext } from "react";
-import { UserContext } from "./UserContext";
 
 export default function CreatePost() {
   const [title, setTitle] = useState("");
@@ -10,7 +8,6 @@ export default function CreatePost() {
   const [content, setContent] = useState("");
   const [files, setFiles] = useState(null);
   const [redirect, setRedirect] = useState(false);
-  const { userInfo } = useContext(UserContext);
 
   async function createNewPost(ev) {
     ev.preventDefault();
@@ -21,13 +18,10 @@ export default function CreatePost() {
     data.set("content", content);
     data.set("file", files[0]);
 
-    const res = await fetch("https://writewave-5o94.onrender.com/post", {
+    const res = await fetch("http://localhost:8080/post", {
       method: "POST",
       body: data,
-      // credentials: "include",
-      headers: {
-        "Authorization": `Bearer ${document.cookie.split('token=')[1]}`, 
-      }
+      credentials: "include",
     });
     if (res.ok) {
       setRedirect(true);
@@ -35,9 +29,6 @@ export default function CreatePost() {
   }
   if (redirect) {
     return <Navigate to={"/"} />;
-  }
-  if (!userInfo?.id) {
-    return <Navigate to="/login" />;
   }
   return (
     <div className="create-page">
