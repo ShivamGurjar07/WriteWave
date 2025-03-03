@@ -13,7 +13,7 @@ export default function LoginPage() {
       method:"POST",
       body:JSON.stringify({username, password}),
       headers:{"Content-Type":"application/json"},
-      credentials:"include",
+      // credentials:"include",
     })
     if (res.ok){
       res.json().then(userInfo=>{

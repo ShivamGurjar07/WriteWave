@@ -23,7 +23,7 @@ export default function CommentSection({ postId }) {
     const res = await fetch(`https://writewave-5o94.onrender.com/comments/${postId}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      credentials: "include",
+      // credentials: "include",
       body: JSON.stringify({ content: newComment }),
     });
 
@@ -39,7 +39,7 @@ export default function CommentSection({ postId }) {
     const res = await fetch(`https://writewave-5o94.onrender.com/comments/${postId}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      credentials: "include",
+      // credentials: "include",
       body: JSON.stringify({ content: replyContent, parentComment: parentCommentId }),
     });
 
@@ -63,7 +63,7 @@ export default function CommentSection({ postId }) {
     const res = await fetch(`https://writewave-5o94.onrender.com/comments/${commentId}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
-      credentials: "include",
+      // credentials: "include",
       body: JSON.stringify({ content: editingComment.content }),
     });
 
@@ -76,7 +76,7 @@ export default function CommentSection({ postId }) {
   const handleDeleteComment = async (commentId) => {
     const res = await fetch(`https://writewave-5o94.onrender.com/comments/${commentId}`, {
       method: "DELETE",
-      credentials: "include",
+      // credentials: "include",
     });
 
     if (res.ok) {

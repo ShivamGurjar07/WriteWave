@@ -38,7 +38,7 @@ export default function EditPost() {
     const res = await fetch("https://writewave-5o94.onrender.com/post", {
       method: "PUT",
       body: data,
-      credentials: "include",
+      // credentials: "include",
     });
 
     if (res.ok) {

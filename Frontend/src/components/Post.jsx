@@ -24,7 +24,7 @@ export default function Post({
         `https://writewave-5o94.onrender.com/post/${_id}`,
         {
           method: "DELETE",
-          credentials: "include",
+          // credentials: "include",
           headers: {
             "Content-Type": "application/json",
              Authorization: `Bearer ${userInfo?.token}`,

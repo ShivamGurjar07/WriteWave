@@ -24,7 +24,7 @@ export default function CreatePost() {
     const res = await fetch("https://writewave-5o94.onrender.com/post", {
       method: "POST",
       body: data,
-      credentials: "include",
+      // credentials: "include",
       headers: {
         "Authorization": `Bearer ${document.cookie.split('token=')[1]}`, 
       }

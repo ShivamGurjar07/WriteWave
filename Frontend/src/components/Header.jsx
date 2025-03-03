@@ -18,7 +18,7 @@ const Header = () => {
     const fetchUser = async () => {
       try {
         const res = await fetch("https://writewave-5o94.onrender.com/profile", {
-          credentials: "include",
+          // credentials: "include",
         });
         const data = await res.json();
         if (!data.error) {
