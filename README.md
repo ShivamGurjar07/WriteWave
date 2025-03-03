@@ -38,11 +38,11 @@ WriteWave is a full-stack blog application where users can register, log in, cre
 
 ### Frontend (`/frontend`)
 
-/src │── /components │ ├── Header.jsx │ ├── Layout.jsx │ ├── Post.jsx │ ├── Editor.jsx │ ├── CreatePost.jsx │ ├── EditPost.jsx │ ├── PostPage.jsx │ ├── Register.jsx │ ├── LoginPage.jsx │ ├── UserContext.jsx │── App.jsx │── main.jsx │── index.css │── package.json
+/src   │── /components   │ ├── Header.jsx   │ ├── Layout.jsx   │ ├── Post.jsx   │ ├── Editor.jsx   │ ├── CreatePost.jsx   │ ├── EditPost.jsx   │ ├── PostPage.jsx   │ ├── Register.jsx   │ ├── LoginPage.jsx   │ ├── UserContext.jsx   │── App.jsx   │── main.jsx   │── index.css   │── package.json
 
 ### Backend (`/backend`)
 
-/backend │── /models │ ├── user.js │ ├── post.js │ ├── comment.js │── /routes │ ├── commentRoutes.js │── /uploads (Stores uploaded images) │── index.js │── .env │── package.json
+/backend   │── /models   │ ├── user.js   │ ├── post.js   │ ├── comment.js   │── /routes   │ ├── commentRoutes.js   │── /uploads (Stores uploaded images)   │── index.js   │── .env   │── package.json  
 
 
 ## 🎯 Installation and Setup
@@ -73,43 +73,38 @@ cd frontend
 npm install
 npm run dev
 
-
 🔗 API Endpoints
-
 Authentication
 Method	Endpoint	Description
 POST	/register	Register a new user
-POST	/login	    Login user and receive JWT token
-GET	    /profile	Get current user profile
-POST	/logout	    Logout user
-
-
+POST	/login	Login user and receive JWT token
+GET	/profile	Get current user profile
+POST	/logout	Logout user
 Blog Posts
 Method	Endpoint	Description
-POST	/post	    Create a new post (requires authentication)
-PUT	    /post	    Edit an existing post (requires authentication)
-GET	    /post	    Get all posts
-GET	    /post/:id	Get a single post by ID
+POST	/post	Create a new post (requires authentication)
+PUT	/post	Edit an existing post (requires authentication)
+GET	/post	Get all posts
+GET	/post/:id	Get a single post by ID
 DELETE	/post/:id	Delete a post (requires authentication)
-
-
 Comments
-Method	Endpoint	        Description
+Method	Endpoint	Description
 POST	/comments/:postId	Add a comment to a post
-GET	    /comments/:postId	Get comments for a post
+GET	/comments/:postId	Get comments for a post
+
 
 
 🔥 Deployment
 Backend:
 
 The backend is deployed on Render/Vercel at:
-https://writewave-5o94.onrender.com
+```https://writewave-5o94.onrender.com```
 
 
 Frontend:
 
 The frontend is hosted on Vercel at:
-https://write-wave-gamma.vercel.app
+```https://write-wave-gamma.vercel.app```
 
 
 👤 Author
