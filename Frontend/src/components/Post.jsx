@@ -14,7 +14,6 @@ export default function Post({
   onDelete,
 }) {
   const { userInfo } = useContext(UserContext);
-  // console.log("User Info:", userInfo);
 
   const handleDelete = async () => {
     if (!window.confirm("Are you sure you want to delete this post?")) {
