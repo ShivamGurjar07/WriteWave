@@ -4,8 +4,6 @@ import { FaRegEdit } from "react-icons/fa";
 import { AiFillDelete } from "react-icons/ai";
 import { BsFillReplyFill } from "react-icons/bs";
 
-
-
 export default function CommentSection({ postId }) {
   const { userInfo } = useContext(UserContext);
   const [comments, setComments] = useState([]);
@@ -15,14 +13,14 @@ export default function CommentSection({ postId }) {
   const [replyContent, setReplyContent] = useState("");
 
   useEffect(() => {
-    fetch(`http://localhost:8080/comments/${postId}`)
+    fetch(`https://writewave-5o94.onrender.com/comments/${postId}`)
       .then((res) => res.json())
       .then((data) => setComments(data));
   }, [postId]);
   const handleAddComment = async () => {
     if (!newComment.trim()) return;
 
-    const res = await fetch(`http://localhost:8080/comments/${postId}`, {
+    const res = await fetch(`https://writewave-5o94.onrender.com/comments/${postId}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
@@ -35,11 +33,10 @@ export default function CommentSection({ postId }) {
       setNewComment("");
     }
   };
-
   const handleReply = async (parentCommentId) => {
     if (!replyContent.trim()) return;
 
-    const res = await fetch(`http://localhost:8080/comments/${postId}`, {
+    const res = await fetch(`https://writewave-5o94.onrender.com/comments/${postId}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
@@ -63,7 +60,7 @@ export default function CommentSection({ postId }) {
   const handleEditComment = async (commentId) => {
     if (!editingComment.content.trim()) return;
 
-    const res = await fetch(`http://localhost:8080/comments/${commentId}`, {
+    const res = await fetch(`https://writewave-5o94.onrender.com/comments/${commentId}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
@@ -77,7 +74,7 @@ export default function CommentSection({ postId }) {
   };
 
   const handleDeleteComment = async (commentId) => {
-    const res = await fetch(`http://localhost:8080/comments/${commentId}`, {
+    const res = await fetch(`https://writewave-5o94.onrender.com/comments/${commentId}`, {
       method: "DELETE",
       credentials: "include",
     });

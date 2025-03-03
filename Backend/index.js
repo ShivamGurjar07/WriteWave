@@ -16,13 +16,44 @@ const fs = require("fs");
 const path = require("path");
 require("dotenv").config();
 const PORT = process.env.PORT;
-const secret = process.env.JWT_SECRET || shivam;
+const secret = process.env.JWT_SECRET || "shivam" ;
 
-app.use(cors({origin: "http://localhost:5173", credentials: true, }));
+const authenticateUser = (req, res, next) => {
+  const token = req.cookies?.token;
+  if (!token) {
+    return res.status(401).json({ error: "Not authenticated" });
+  }
+  jwt.verify(token, process.env.JWT_SECRET || "shivam", {}, (err, userInfo) => {
+    if (err) return res.status(403).json({ error: "Invalid token" });
+    req.user = userInfo;
+    next();
+  });
+};
+
+
+// app.use(cors({
+//    origin: "http://localhost:5173", 
+//    credentials: true, 
+//  }));
+
+app.use(cors({
+  origin: ["http://localhost:5173", "https://writewave-5o94.onrender.com"],
+  credentials: true,
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
+
+
 // app.use(cors());
 
 app.use(express.json());
 app.use(cookieParser());
+
+app.use((req, res, next) => {
+  console.log("Cookies received:", req.cookies); 
+  next();
+});
+
+
 app.use("/uploads", express.static(__dirname + "/uploads"));
 async function connectDB() {
   try {
@@ -32,6 +63,7 @@ async function connectDB() {
     console.log("error", error);
   }
 }
+
 
 // User Registration
 app.post("/register", async (req, res) => {
@@ -63,12 +95,11 @@ app.post("/login", async (req, res) => {
       if (err) {
         return res.status(500).json({ error: "Error generating token" });
       }
-      res
-        .cookie("token", token, {
-          httpOnly: true,
-          secure: true,
-          sameSite: "lax",
-        })
+      res.cookie("token", token, {
+        httpOnly: true,
+        secure: true,
+        sameSite: "None", 
+      })
         .json({
           id: userDoc._id,
           username,
@@ -109,7 +140,12 @@ app.post("/post", uploadMiddleWare.single("file"), async (req, res) => {
     const newPath = `${tempPath}${ext}`;
     fs.renameSync(tempPath, newPath);
     const { title, summary, content } = req.body;
+    console.log("Cookies:", req.cookies);
+
     const token = req.cookies?.token;
+    if (!token) {
+      return res.status(401).json({ error: "No token provided" });
+    }
     jwt.verify(token, secret, {}, async (err, info) => {
       if (err) {
         return res.status(403).json({ error: "Invalid token" });
@@ -191,38 +227,29 @@ app.get("/post/:id", async (req, res) => {
 
 app.use("/comments", commentRoutes);
 
-app.delete("/post/:id", async (req, res) => {
+app.delete("/post/:id",authenticateUser, async (req, res) => {
   const { id } = req.params;
   const token = req.cookies?.token;
-
   if (!token) {
     return res.status(401).json({ error: "Not authenticated" });
   }
-
   jwt.verify(token, secret, {}, async (err, info) => {
     if (err) {
       return res.status(403).json({ error: "Invalid token" });
     }
-
     try {
       const postDoc = await Post.findById(id);
       if (!postDoc) {
         return res.status(404).json({ error: "Post not found" });
       }
-
-      // Check if the logged-in user is the author of the post
       const isAuthor =
         JSON.stringify(postDoc.author) === JSON.stringify(info.id);
       if (!isAuthor) {
         return res.status(403).json({ error: "You are not the author" });
       }
-
-      // Delete the image file from the server
       if (postDoc.cover) {
         fs.unlinkSync(postDoc.cover);
       }
-
-      // Delete the post from the database
       await Post.findByIdAndDelete(id);
       res.json({ message: "Post deleted successfully" });
     } catch (error) {
