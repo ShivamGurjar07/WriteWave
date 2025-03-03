@@ -13,7 +13,7 @@ export default function IndexPages() {
   const postsPerPage = 8;
 
   useEffect(() => {
-    fetch("http://localhost:8080/post")
+    fetch("https://writewave-5o94.onrender.com/post")
       .then((res) => res.json())
       .then((posts) => setPosts(posts));
   }, []);

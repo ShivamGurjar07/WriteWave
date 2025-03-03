@@ -21,7 +21,7 @@ export function UserContextProvider({ children }) {
   const [userInfo, setUserInfo] = useState({});
 
   useEffect(() => {
-    fetch("http://localhost:8080/profile", { credentials: "include" })
+    fetch("https://writewave-5o94.onrender.com/profile", { credentials: "include" })
       .then((res) => res.json())
       .then((userData) => {
         setUserInfo(userData);

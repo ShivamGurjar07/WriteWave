@@ -91,7 +91,7 @@ const Header = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await fetch("http://localhost:8080/profile", {
+        const res = await fetch("https://writewave-5o94.onrender.com/profile", {
           credentials: "include",
         });
         const data = await res.json();
@@ -108,7 +108,7 @@ const Header = () => {
 
   const logout = async () => {
     try {
-      await fetch("http://localhost:8080/logout", {
+      await fetch("https://writewave-5o94.onrender.com/logout", {
         credentials: "include",
         method: "POST",
       });

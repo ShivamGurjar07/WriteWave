@@ -18,7 +18,7 @@ export default function CreatePost() {
     data.set("content", content);
     data.set("file", files[0]);
 
-    const res = await fetch("http://localhost:8080/post", {
+    const res = await fetch("https://writewave-5o94.onrender.com/post", {
       method: "POST",
       body: data,
       credentials: "include",

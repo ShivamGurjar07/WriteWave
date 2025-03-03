@@ -55,7 +55,7 @@ export default function Post({ _id, title, summary, cover, createdAt, author, on
       return;
     }
     try {
-      const response = await fetch(`http://localhost:8080/post/${_id}`, {
+      const response = await fetch(`https://writewave-5o94.onrender.com/post/${_id}`, {
         method: "DELETE",
         credentials: "include",
       });
@@ -76,7 +76,7 @@ export default function Post({ _id, title, summary, cover, createdAt, author, on
     <div className="post">
       <div className="image1">
         <Link to={`/post/${_id}`}>
-          <img src={"http://localhost:8080/" + cover} alt=" " />
+          <img src={"https://writewave-5o94.onrender.com/" + cover} alt=" " />
         </Link>
       </div>
       <div className="texts">
