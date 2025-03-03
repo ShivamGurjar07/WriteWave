@@ -98,15 +98,15 @@ GET	/comments/:postId	Get comments for a post
 Backend:
 
 The backend is deployed on Render/Vercel at:
-``` bash
- https://writewave-5o94.onrender.com
-```
+```bash
+https://writewave-5o94.onrender.com
 
 
 Frontend:
 
 The frontend is hosted on Vercel at:
-```https://write-wave-gamma.vercel.app```
+```bash
+https://write-wave-gamma.vercel.app
 
 
 👤 Author
